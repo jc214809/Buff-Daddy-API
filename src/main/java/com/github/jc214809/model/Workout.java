@@ -4,17 +4,17 @@ import java.sql.Date;
 
 public class Workout {
 
-	private int workoutID;	
+	private int workoutId;	
 	private Date workoutDate;
 	private String userId;
 	private String workoutStatus;
 	
 	
-	public int getWorkoutID() {
-		return workoutID;
+	public int getWorkoutId() {
+		return workoutId;
 	}
-	public void setWorkoutID(int workoutID) {
-		this.workoutID = workoutID;
+	public void setWorkoutId(int workoutId) {
+		this.workoutId = workoutId;
 	}
 	public Date getWorkoutDate() {
 		return workoutDate;

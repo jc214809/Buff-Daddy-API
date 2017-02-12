@@ -2,10 +2,11 @@ package com.github.jc214809.model;
 
 public class Exercises {
 
-	private int exerciseID;	
+	private int exerciseId;	
 	private String exerciseName;
 	private String recommendation;
 	private String exerciseDescription;
+	private int sortId;
 	private String image;
 	private Boolean weight;
 	private Boolean reps;
@@ -27,12 +28,12 @@ public class Exercises {
 	private Boolean legs;
 	private Boolean shoulders;
 	
-	public int getExerciseID() {
-		return exerciseID;
+	public int getExerciseId() {
+		return exerciseId;
 	}
 
-	public void setExerciseID(int exerciseID) {
-		this.exerciseID = exerciseID;
+	public void setExerciseId(int exerciseId) {
+		this.exerciseId = exerciseId;
 	}
 
 	public String getExerciseName() {
@@ -217,6 +218,14 @@ public class Exercises {
 
 	public void setShoulders(Boolean shoulders) {
 		this.shoulders = shoulders;
+	}
+
+	public int getSortId() {
+		return sortId;
+	}
+
+	public void setSortId(int sortId) {
+		this.sortId = sortId;
 	}
 
 

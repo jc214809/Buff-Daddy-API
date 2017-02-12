@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.jc214809.mappers.SetsMapper;
+import com.github.jc214809.model.Exercises;
 import com.github.jc214809.model.PreviousData;
 import com.github.jc214809.model.PreviousWorkoutData;
 import com.github.jc214809.model.Set;
@@ -34,7 +35,7 @@ public class SetsService {
 		return setsMapper.getSets(workoutID);
 	}
 
-	public List<Set> getExercisesForWorkout(int workoutID) {
+	public List<Exercises> getExercisesForWorkout(int workoutID) {
 		return setsMapper.getExercisesForWorkout(workoutID);
 	}
 

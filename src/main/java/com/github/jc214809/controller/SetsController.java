@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.github.jc214809.model.Exercises;
 import com.github.jc214809.model.PreviousData;
 import com.github.jc214809.model.Set;
 import com.github.jc214809.service.SetsService;
@@ -46,7 +47,7 @@ public class SetsController {
 	
 	@RequestMapping(value = "/getExercisesForWorkout", method = { RequestMethod.GET }, produces = "application/json")
 	@ResponseBody
-	public List<Set> getExercisesForWorkout(@RequestParam(value = "id") int id) {
+	public List<Exercises> getExercisesForWorkout(@RequestParam(value = "id") int id) {
 		return setsService.getExercisesForWorkout(id);
 	}
 	

@@ -16,8 +16,8 @@ public class ExerciseService {
 	
 	public void addExercise(Exercises exercises) {
 		exerciseMapper.addExercise(exercises);
-		int id = exercises.getExerciseID();
-		exercises.setExerciseID(id);
+		int id = exercises.getExerciseId();
+		exercises.setExerciseId(id);
 		exerciseMapper.addExerciseToUser(exercises);
 	}
 	

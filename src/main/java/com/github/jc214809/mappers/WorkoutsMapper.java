@@ -14,13 +14,13 @@ public interface WorkoutsMapper {
 	@Select("SELECT * FROM Workouts")
 	public List<Workout> getCount();
 	
-	@Select("SELECT workoutId, Workouts.userID, workoutDate, workoutStatus FROM Workouts INNER JOIN ( SELECT userID, MAX(workoutDate) AS maxsign FROM Workouts GROUP BY userID ) ms ON Workouts.userID = ms.userID AND workoutDate = maxsign WHERE ms.userID = #{userId} and workoutStatus = 'In Progress'") 
+	@Select("SELECT workoutId, Workouts.userId, workoutDate, workoutStatus FROM Workouts INNER JOIN ( SELECT userId, MAX(workoutDate) AS maxsign FROM Workouts GROUP BY userId ) ms ON Workouts.userId = ms.userId AND workoutDate = maxsign WHERE ms.userId = #{userId} and workoutStatus = 'In Progress'") 
 	public Workout workoutInProgress(@Param("userId") String userId);
 	
-	@Insert("INSERT INTO `Workouts`(`userID`) VALUES (#{userId})")
+	@Insert("INSERT INTO `Workouts`(`userId`) VALUES (#{userId})")
 	public void newWorkout(@Param("userId") String userId);
 	
-	@Update("UPDATE `Workouts` SET `workoutStatus`='Complete' WHERE userID = #{userId}")
+	@Update("UPDATE `Workouts` SET `workoutStatus`='Complete' WHERE userId = #{userId}")
 	public void endWorkout(@Param("userId") String userId);
 	
 	@Select("SELECT * FROM SETS WHERE workoutId = #{workoutId}")
