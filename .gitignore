@@ -17,3 +17,4 @@ target/BuffDaddyAPI/WEB-INF/classes/com/github/jc214809/service/WorkoutsService.
 .settings/org.eclipse.core.resources.prefs
 *.prefs
 .settings/org.eclipse.core.resources.prefs
+src/main/webapp/WEB-INF/config/springConfig.xml
