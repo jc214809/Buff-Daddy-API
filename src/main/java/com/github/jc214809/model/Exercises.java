@@ -27,6 +27,7 @@ public class Exercises {
 	private Boolean core;
 	private Boolean legs;
 	private Boolean shoulders;
+	private Boolean cardio;
 	
 	public int getExerciseId() {
 		return exerciseId;
@@ -226,6 +227,14 @@ public class Exercises {
 
 	public void setSortId(int sortId) {
 		this.sortId = sortId;
+	}
+
+	public Boolean getCardio() {
+		return cardio;
+	}
+
+	public void setCardio(Boolean cardio) {
+		this.cardio = cardio;
 	}
 
 

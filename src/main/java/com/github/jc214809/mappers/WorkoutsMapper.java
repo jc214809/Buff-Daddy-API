@@ -20,8 +20,8 @@ public interface WorkoutsMapper {
 	@Insert("INSERT INTO `Workouts`(`userId`) VALUES (#{userId})")
 	public void newWorkout(@Param("userId") String userId);
 	
-	@Update("UPDATE `Workouts` SET `workoutStatus`='Complete' WHERE userId = #{userId}")
-	public void endWorkout(@Param("userId") String userId);
+	@Update("UPDATE `Workouts` SET `workoutStatus`='Complete', workoutTitle = #{workoutTitle} WHERE userId = #{userId} AND workoutId = #{workoutId}")
+	public void endWorkout(Workout workout);
 	
 	@Select("SELECT * FROM SETS WHERE workoutId = #{workoutId}")
 	public Workout getWorkoutDetails(@Param("workoutId") String workoutId);

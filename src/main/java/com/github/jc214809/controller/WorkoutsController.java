@@ -46,8 +46,8 @@ public class WorkoutsController {
 	}
 	@RequestMapping(value = "/endWorkout", method = { RequestMethod.POST })
 	@ResponseBody
-	public void endWorkout(@RequestBody final  RegistrationDetails userDetails){
-		workoutsService.endWorkout(userDetails.getSocialId());
+	public void endWorkout(@RequestBody final  Workout workout){
+		workoutsService.endWorkout(workout);
 	}
 	@RequestMapping(value = "/workoutDetails", method = { RequestMethod.GET })
 	@ResponseBody

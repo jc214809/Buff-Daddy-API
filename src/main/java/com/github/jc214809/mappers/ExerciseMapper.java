@@ -12,14 +12,14 @@ import com.github.jc214809.model.Exercises;
 
 public interface ExerciseMapper {
 
-	@Insert("INSERT INTO Exercise(exerciseName, recommendation, exerciseDescription, image, weight, reps, time, distance, calories, heartRate, stairs, steps, level, incline, strokes, speed, socialId, arms, back, chest, core, legs, shoulders) VALUES (#{exerciseName},#{recommendation},#{exerciseDescription},#{image},#{weight},#{reps},#{time},#{distance},#{calories},#{heartRate},#{stairs},#{steps},#{level},#{incline},#{strokes},#{speed},#{socialId},#{arms},#{back},#{chest},#{core},#{legs},#{shoulders})")
+	@Insert("INSERT INTO Exercise(exerciseName, recommendation, exerciseDescription, image, weight, reps, time, distance, calories, heartRate, stairs, steps, level, incline, strokes, speed, socialId, arms, back, chest, core, legs, shoulders, cardio) VALUES (#{exerciseName},#{recommendation},#{exerciseDescription},#{image},#{weight},#{reps},#{time},#{distance},#{calories},#{heartRate},#{stairs},#{steps},#{level},#{incline},#{strokes},#{speed},#{socialId},#{arms},#{back},#{chest},#{core},#{legs},#{shoulders},#{cardio})")
 	@Options(useGeneratedKeys = true, keyProperty="exerciseId")
 	public void addExercise(Exercises exercises);	
 	
 	@Insert("INSERT INTO UserExercises(socialId, exerciseId) VALUES (#{socialId},#{exerciseId})")
 	public void addExerciseToUser(Exercises exercises);
 
-	@Update("UPDATE Exercise SET exerciseName= #{exerciseName}, recommendation= #{recommendation}, exerciseDescription = #{exerciseDescription},image = #{image},weight = #{weight}, reps = #{reps},time = #{time},distance = #{distance},calories = #{calories},heartRate = #{heartRate},stairs = #{stairs},steps = #{steps},level = #{level},incline = #{incline},strokes = #{strokes},speed = #{speed},arms = #{arms},back = #{back},chest = #{chest},core = #{core},legs = #{legs},shoulders = #{shoulders} WHERE exerciseId = #{exerciseId}")
+	@Update("UPDATE Exercise SET exerciseName= #{exerciseName}, recommendation= #{recommendation}, exerciseDescription = #{exerciseDescription},image = #{image},weight = #{weight}, reps = #{reps},time = #{time},distance = #{distance},calories = #{calories},heartRate = #{heartRate},stairs = #{stairs},steps = #{steps},level = #{level},incline = #{incline},strokes = #{strokes},speed = #{speed},arms = #{arms},back = #{back},chest = #{chest},core = #{core},legs = #{legs},shoulders = #{shoulders},cardio = #{cardio} WHERE exerciseId = #{exerciseId}")
 	public void editExercise(Exercises exercises);
 
 	@Delete("Delete FROM Exercise WHERE exerciseId = #{exerciseId}")
@@ -40,7 +40,7 @@ public interface ExerciseMapper {
 	@Select("SELECT * From Exercise")
 	public List<Exercises> getAllExercises();
 	
-	@Select("SELECT exercise.exerciseId, exercise.exerciseName, exercise.recommendation, exercise.exerciseDescription, exercise.weight, exercise.reps, exercise.time, exercise.distance, exercise.calories, exercise.heartRate, exercise.stairs, exercise.steps, exercise.level, exercise.incline, exercise.strokes, exercise.speed, exercise.socialId, arms, back, chest, core, legs, shoulders FROM UserExercises ue, Exercise exercise WHERE ue.exerciseId = exercise.exerciseId AND ue.socialId = #{socialId}")
+	@Select("SELECT exercise.exerciseId, exercise.exerciseName, exercise.recommendation, exercise.exerciseDescription, exercise.weight, exercise.reps, exercise.time, exercise.distance, exercise.calories, exercise.heartRate, exercise.stairs, exercise.steps, exercise.level, exercise.incline, exercise.strokes, exercise.speed, exercise.socialId, arms, back, chest, core, legs, shoulders, cardio FROM UserExercises ue, Exercise exercise WHERE ue.exerciseId = exercise.exerciseId AND ue.socialId = #{socialId}")
 	public List<Exercises> getUsersExercises(String socialId);
 
 }

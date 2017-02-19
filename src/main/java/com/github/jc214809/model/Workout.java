@@ -4,7 +4,8 @@ import java.sql.Date;
 
 public class Workout {
 
-	private int workoutId;	
+	private int workoutId;
+	private String workoutTitle;
 	private Date workoutDate;
 	private String userId;
 	private String workoutStatus;
@@ -33,6 +34,12 @@ public class Workout {
 	}
 	public void setWorkoutStatus(String workoutStatus) {
 		this.workoutStatus = workoutStatus;
+	}
+	public String getWorkoutTitle() {
+		return workoutTitle;
+	}
+	public void setWorkoutTitle(String workoutTitle) {
+		this.workoutTitle = workoutTitle;
 	}
 
 

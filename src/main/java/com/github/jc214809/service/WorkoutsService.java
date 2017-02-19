@@ -25,8 +25,8 @@ public class WorkoutsService {
 	public Workout workoutInProgress(String userId) {
 		return workoutMapper.workoutInProgress(userId);
 	}
-	public void endWorkout(String userId) {
-		workoutMapper.endWorkout(userId);
+	public void endWorkout(Workout workout) {
+		workoutMapper.endWorkout(workout);
 	}
 	public void getWorkoutDetails(String workoutId) {
 		workoutMapper.getWorkoutDetails(workoutId);

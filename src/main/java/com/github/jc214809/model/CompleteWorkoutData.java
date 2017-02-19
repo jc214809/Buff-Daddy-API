@@ -6,6 +6,7 @@ public class CompleteWorkoutData {
 	private int setId;
 	private int workoutId;
 	private Date workoutDate;
+	private String workoutTitle;
 	private int exerciseId;
 	private int sortId;
 	private String exerciseName;
@@ -129,5 +130,11 @@ public class CompleteWorkoutData {
 	}
 	public void setWorkoutDate(Date workoutDate) {
 		this.workoutDate = workoutDate;
+	}
+	public String getWorkoutTitle() {
+		return workoutTitle;
+	}
+	public void setWorkoutTitle(String workoutTitle) {
+		this.workoutTitle = workoutTitle;
 	}
 }
