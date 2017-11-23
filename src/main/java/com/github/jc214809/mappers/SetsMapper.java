@@ -18,7 +18,7 @@ public interface SetsMapper {
 	@Insert("INSERT INTO `Sets`(`workoutId`, `exerciseId`, `weight`, `reps`, `time`, `distance`, `calories`, `heartRate`, `stairs`, `steps`, `level`, `incline`, `strokes`, `speed`) VALUES (#{workoutId},#{exerciseId},#{weight},#{reps},#{time},#{distance},#{calories},#{heartRate},#{stairs},#{steps},#{level},#{incline},#{strokes},#{speed})")
 	public void addSet(Set set);
 	
-	@Insert("SELECT COUNT(*) FROM WorkoutsExercise WHERE exerciseId = #{exerciseId} AND #{workoutId} = #{workoutId}")
+	@Insert("SELECT COUNT(*) FROM WorkoutsExercise WHERE exerciseId = #{exerciseId} AND workoutId = #{workoutId}")
 	public int checkForExerciseToWorkout(Set set);
 	
 	@Insert("INSERT INTO `WorkoutsExercise`(`workoutId`, `exerciseId`) VALUES (#{workoutId},#{exerciseId})")
