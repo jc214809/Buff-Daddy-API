@@ -24,7 +24,7 @@ public interface SetsMapper {
 	@Insert("INSERT INTO `WorkoutsExercise`(`workoutId`, `exerciseId`) VALUES (#{workoutId},#{exerciseId})")
 	public void addExerciseToWorkout(Set set);
 	
-	@Delete("DELETE FROM `WorkoutsExercise` WHERE exerciseId = #{exerciseId} AND #{workoutId} = #{workoutId}")
+	@Delete("DELETE FROM `WorkoutsExercise` WHERE exerciseId = #{exerciseId} AND workoutId = #{workoutId}")
 	public void deleteExerciseToWorkout(Set set);
 	
 	@Select("SELECT sets.setId, sets.workoutId, sets.exerciseId, exercise.exerciseName, sets.weight, sets.reps, sets.time, sets.distance, sets.calories, sets.heartRate, sets.stairs, sets.steps, sets.level, sets.incline, sets.strokes, sets.speed FROM Sets sets, Exercise exercise WHERE sets.exerciseId =exercise.exerciseId AND sets.workoutId = #{workoutId}")
