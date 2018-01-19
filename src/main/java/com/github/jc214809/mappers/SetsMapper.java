@@ -47,7 +47,7 @@ public interface SetsMapper {
 	@Select("SELECT setId, Sets.workoutId, Workouts.workoutDate, Sets.exerciseId, Sets.weight, Sets.reps, Sets.time, Sets.distance, Sets.calories, Sets.heartRate, Sets.stairs, Sets.steps, Sets.level, Sets.incline, Sets.strokes, Sets.speed from Sets INNER JOIN Workouts ON Sets.workoutId=Workouts.workoutId WHERE exerciseId = #{exerciseId} AND userId = #{socialId} AND workoutStatus = 'Complete' AND Workouts.workoutId = #{workoutId}")
 	public List<CompleteWorkoutData> getSetDataForWorkout(@Param("exerciseId") int exerciseId,@Param("socialId") String socialId,@Param("workoutId") String workoutId);
 	
-	@Select("select MIN(s.setId) From Sets s, Workouts w Where w.workoutStatus = 'In Progress' and s.workoutId = #{workoutId} and s.workoutId = w.workoutId and s.exerciseId = #{exerciseId}")
+	@Select("SELECT MIN(s.setId) From Sets s, Workouts w Where w.workoutStatus = 'In Progress' and s.workoutId = #{workoutId} and s.workoutId = w.workoutId and s.exerciseId = #{exerciseId}")
 	public int getMinSetId(@Param("exerciseId") int exerciseId,@Param("workoutId") int workoutId);
 
 }
